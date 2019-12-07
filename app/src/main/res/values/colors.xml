@@ -5,4 +5,5 @@
     <color name="colorAccent">#7740E2</color>
     <color name="statusBar">#FFFFFF</color>
     <color name="unselectedItem">#C4C4C4</color>
+    <color name="background">#FFFFFF</color>
 </resources>
