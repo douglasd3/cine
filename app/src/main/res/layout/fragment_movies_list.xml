@@ -10,8 +10,10 @@
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         tools:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-        tools:spanCount="2"
+        tools:spanCount="3"
         tools:listitem="@layout/item_movie_card"/>
 
 <!--    <ProgressBar-->

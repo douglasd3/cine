@@ -18,9 +18,12 @@
         <item name="android:gravity">center_vertical</item>
         <item name="android:textSize">16sp</item>
         <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:fontFamily">"OpenSans"</item>
     </style>
 
     <style name="CustomTabLayoutStyle" parent="Widget.Design.TabLayout">
         <item name="tabIndicatorColor">@color/colorAccent</item>
+        <item name="tabIndicatorFullWidth">false</item>
+        <item name="tabGravity">center</item>
     </style>
 </resources>

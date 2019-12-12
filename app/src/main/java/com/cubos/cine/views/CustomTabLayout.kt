@@ -52,6 +52,7 @@ class CustomTabLayout: TabLayout {
                     customFontTextView.setTypeface(customFontTextView.typeface, Typeface.BOLD)
                 } else {
                     customFontTextView.setTextColor(ContextCompat.getColor(context, R.color.unselectedItem))
+                    customFontTextView.setTypeface(customFontTextView.typeface, Typeface.BOLD)
                 }
                 tab.customView = customFontTextView
             }
@@ -85,6 +86,15 @@ class CustomTabLayout: TabLayout {
     }
 
     private fun addOnTabSelectedListener() {
+        for (i in 0 until tabCount) {
+            val tab = getTabAt(i)
+            if (tab != null) {
+                val view = tab.customView
+                if (!tab.isSelected && view is AppCompatTextView) {
+                    view.typeface = mUnselectedTypeFace
+                }
+            }
+        }
         addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
             override fun onTabReselected(tab: Tab?) {
             }

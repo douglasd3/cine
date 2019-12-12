@@ -16,4 +16,8 @@ interface ApiMoviesInterface {
     fun handleGetPopularMovies(@Query("page") page: Int = 1,
                       @Query(API_KEY_QUERY) api_key: String = API_QUERY_VALUE) : Call<MovieResponse?>
 
+    @GET("/3/movie/now_playing")
+    fun handleOnTheatersMovies(@Query("page") page: Int = 1,
+                               @Query(API_KEY_QUERY) api_key: String = API_QUERY_VALUE) : Call<MovieResponse?>
+
 }

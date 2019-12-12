@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.paging.LivePagedListBuilder
 import androidx.paging.PagedList
 import com.cubos.cine.dataSource.MovieDataSourceFactory
+import com.cubos.cine.dataSource.MovieDataSourceType
 import com.cubos.cine.models.Movie
 import com.cubos.cine.models.MovieResponse
 
@@ -18,7 +19,7 @@ class MoviesListViewModel : ViewModel() {
     }
 
     val moviesList: LiveData<PagedList<Movie>> =
-        LivePagedListBuilder<Int, Movie>(MovieDataSourceFactory(), 10)
+        LivePagedListBuilder<Int, Movie>(MovieDataSourceFactory(MovieDataSourceType.ONTHEATERS), 10)
             .setBoundaryCallback(object : PagedList.BoundaryCallback<Movie>() {
                 override fun onZeroItemsLoaded() {
                     super.onZeroItemsLoaded()

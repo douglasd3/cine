@@ -45,7 +45,7 @@ class MoviesListFragment : Fragment() {
 //                putExtra(ATTR_IMAGE, cat.url)
 //            }, options.toBundle())
         }
-        recyclerView?.layoutManager = GridLayoutManager(this.context, 2)
+        recyclerView?.layoutManager = GridLayoutManager(this.context, 3)
         recyclerView?.adapter = adapter
     }
 

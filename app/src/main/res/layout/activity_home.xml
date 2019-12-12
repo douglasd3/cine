@@ -20,8 +20,6 @@
             android:id="@+id/tabLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="81dp"
-            android:layout_marginRight="81dp"
             style="@style/CustomTabLayoutStyle"/>
 
     </com.google.android.material.appbar.AppBarLayout>

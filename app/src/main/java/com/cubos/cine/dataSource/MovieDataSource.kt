@@ -9,16 +9,27 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class MovieDataSource : PageKeyedDataSource<Int, Movie>() {
+enum class MovieDataSourceType {
+    POPULAR,
+    ONTHEATERS
+}
+
+class MovieDataSource(private val type: MovieDataSourceType) : PageKeyedDataSource<Int, Movie>() {
 
     private var newPage = 0
+    private var apiCall: ((Int) -> Call<MovieResponse?>) = {
+        when(type) {
+            MovieDataSourceType.POPULAR -> ApiService().getService().handleGetPopularMovies(it)
+            MovieDataSourceType.ONTHEATERS -> ApiService().getService().handleOnTheatersMovies(it)
+        }
+    }
 
     override fun loadInitial(
         params: LoadInitialParams<Int>,
         callback: LoadInitialCallback<Int, Movie>
     ) {
         newPage++
-        val call = ApiService().getService().handleGetPopularMovies(newPage)
+        val call = apiCall(newPage)
         call.enqueue(object : Callback<MovieResponse?> {
             override fun onFailure(call: Call<MovieResponse?>, t: Throwable) {
                 Log.d("error", t.toString())
