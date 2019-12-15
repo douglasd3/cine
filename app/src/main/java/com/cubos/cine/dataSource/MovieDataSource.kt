@@ -51,7 +51,7 @@ class MovieDataSource(private val type: MovieDataSourceType) : PageKeyedDataSour
 
     override fun loadAfter(params: LoadParams<Int>, callback: LoadCallback<Int, Movie>) {
         newPage++
-        val call = ApiService().getService().handleGetPopularMovies(newPage)
+        val call = apiCall(newPage)
         call.enqueue(object : Callback<MovieResponse?> {
             override fun onFailure(call: Call<MovieResponse?>, t: Throwable) {}
 
