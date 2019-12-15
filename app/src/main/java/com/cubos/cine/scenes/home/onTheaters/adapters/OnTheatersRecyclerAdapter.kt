@@ -37,12 +37,11 @@ class OnTheatersRecyclerAdapter(private val onClick: ((Movie, View?) -> Unit)) :
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         with(holder.itemView) {
             getItem(position)?.let { movie ->
-//                val posterUrl = ApiService.posterBaseURL + ApiService.posterBaseSize + movie.poster_path
-//                Picasso.get().load(posterUrl).into(moviePoster)
-//                movieTitle.text = movie.title
-//                setOnClickListener {
-//                    onClick(movie, cardView)
-//                }
+                val posterUrl = ApiService.posterBaseURL + ApiService.posterBaseSize + movie.poster_path
+                Picasso.get().load(posterUrl).into(moviePoster)
+                setOnClickListener {
+                    onClick(movie, cardView)
+                }
             }
         }
     }

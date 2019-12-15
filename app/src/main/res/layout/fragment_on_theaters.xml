@@ -10,8 +10,8 @@
         android:id="@+id/onTheathersRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingStart="32dp"
-        android:paddingEnd="32dp"
+        android:paddingStart="55dp"
+        android:paddingEnd="55dp"
         android:clipToPadding="false"/>
 
 <!--    <com.cubos.cine.views.HorizontalCarouselRecyclerView-->

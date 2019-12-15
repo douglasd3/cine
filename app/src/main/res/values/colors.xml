@@ -6,4 +6,6 @@
     <color name="statusBar">#FFFFFF</color>
     <color name="unselectedItem">#C4C4C4</color>
     <color name="background">#FFFFFF</color>
+    <color name="starYellow">#FFB300</color>
+    <color name="textSecondary">#808080</color>
 </resources>

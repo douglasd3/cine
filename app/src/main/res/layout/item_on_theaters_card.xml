@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorAccent">
+    android:background="@color/background">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
@@ -13,10 +13,10 @@
         android:transitionName="image"
         app:cardCornerRadius="16dp"
         app:cardPreventCornerOverlap="true"
-        app:cardUseCompatPadding="true"
         app:layout_constraintDimensionRatio="H,24:37"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -25,23 +25,9 @@
             <ImageView
                 android:id="@+id/moviePoster"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:contentDescription="@string/movieName"
+                android:layout_height="match_parent"
                 android:scaleType="centerCrop"
                 tools:src="@tools:sample/backgrounds/scenic" />
-
-            <TextView
-                android:id="@+id/movieTitle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_margin="16dp"
-                android:ellipsize="end"
-                android:maxLines="2"
-                android:textColor="@android:color/black"
-                android:textSize="24sp"
-                tools:text="@tools:sample/lorem" />
-
         </RelativeLayout>
 
     </androidx.cardview.widget.CardView>

@@ -22,25 +22,12 @@ interface RecyclerViewPagerStateListener {
 
 open class RecyclerViewPagerListenable(private val maxPages: Int = 3) : RecyclerView.OnScrollListener() {
     fun attachToRecyclerView(recyclerView: RecyclerView, listener: RecyclerViewPagerStateListener) {
-        assertRecyclerViewSetup(recyclerView)
-        setUpSnapHelper(recyclerView, listener)
-//        setUpScrollListener(recyclerView, listener)
-    }
-
-//    protected fun setUpScrollListener(recyclerView: RecyclerView, listener: RecyclerViewPagerStateListener) =
-//        PagerSnapHelper(recyclerView, listener, maxPages)
-
-    protected fun setUpSnapHelper(recyclerView: RecyclerView, listener: RecyclerViewPagerStateListener) =
         PagerSnapHelper().attachToRecyclerView(recyclerView)
-//        PagerSnapHelperVerbose(recyclerView, listener).attachToRecyclerView(recyclerView)
 
-    protected fun assertRecyclerViewSetup(recyclerView: RecyclerView) {
-        if (recyclerView.layoutManager !is LinearLayoutManager) {
-            throw IllegalArgumentException("RVPagerSnapHelperListenable can only work with a linear layout manager")
-        }
-
-        if ((recyclerView.layoutManager as LinearLayoutManager).orientation != LinearLayoutManager.HORIZONTAL) {
-            throw IllegalArgumentException("RVPagerSnapHelperListenable can only work with a horizontal orientation")
-        }
     }
+
+    override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
+        super.onScrollStateChanged(recyclerView, newState)
+    }
+
 }

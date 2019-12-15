@@ -40,6 +40,8 @@ class MovieRecyclerAdapter(private val onClick: ((Movie, View?) -> Unit)) :
                 val posterUrl = ApiService.posterBaseURL + ApiService.posterBaseSize + movie.poster_path
                 Picasso.get().load(posterUrl).into(moviePoster)
                 movieTitle.text = movie.title
+                movieGrade.text = movie.vote_average.toString()
+                movieTime.text = movie.release_date
                 setOnClickListener {
                     onClick(movie, cardView)
                 }

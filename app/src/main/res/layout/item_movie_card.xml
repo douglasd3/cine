@@ -24,25 +24,66 @@
             <ImageView
                 android:id="@+id/moviePoster"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:contentDescription="@string/movieName"
+                android:layout_height="match_parent"
                 android:scaleType="centerCrop"
                 tools:src="@tools:sample/backgrounds/scenic" />
-
-            <TextView
-                android:id="@+id/movieTitle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_margin="16dp"
-                android:ellipsize="end"
-                android:maxLines="2"
-                android:textColor="@android:color/black"
-                android:textSize="24sp"
-                tools:text="@tools:sample/lorem" />
 
         </RelativeLayout>
 
     </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/movieTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="0dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginEnd="16dp"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:textColor="@android:color/black"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@+id/cardView"
+        tools:text="@tools:sample/lorem" />
+
+    <ImageView
+        android:id="@+id/star"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        app:layout_constraintTop_toBottomOf="@+id/movieTitle"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="0dp"
+        android:src="@drawable/ic_star_24px"
+        android:tint="@color/starYellow"
+        />
+
+    <TextView
+        android:id="@+id/movieGrade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxLines="2"
+        android:textColor="@color/starYellow"
+        android:textSize="10sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toRightOf="@+id/star"
+        app:layout_constraintTop_toBottomOf="@+id/movieTitle"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="6dp"
+        tools:text="@tools:sample/lorem" />
+
+    <TextView
+        android:id="@+id/movieTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/textSecondary"
+        android:textSize="10sp"
+        app:layout_constraintRight_toRightOf="@+id/cardView"
+        app:layout_constraintTop_toTopOf="@+id/movieGrade"
+        tools:text="@tools:sample/lorem" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
