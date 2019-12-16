@@ -9,6 +9,7 @@ import com.cubos.cine.dataSource.MovieDataSourceType
 import com.cubos.cine.models.Movie
 
 class OnTheatersViewModel: ViewModel() {
+
     val onTheatersList: LiveData<PagedList<Movie>> =
         LivePagedListBuilder<Int, Movie>(MovieDataSourceFactory(MovieDataSourceType.ONTHEATERS), 10)
             .setBoundaryCallback(object : PagedList.BoundaryCallback<Movie>() {
@@ -25,4 +26,5 @@ class OnTheatersViewModel: ViewModel() {
                 }
             })
             .build()
+
 }

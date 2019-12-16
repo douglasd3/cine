@@ -1,5 +1,7 @@
 package com.cubos.cine.scenes.home.moviesList
 
+import android.app.ActivityOptions
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -9,8 +11,8 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.GridLayoutManager
 
-import com.cubos.cine.R
 import com.cubos.cine.scenes.home.moviesList.adapters.MovieRecyclerAdapter
+import com.cubos.cine.scenes.movieDetail.MovieDetailActivity
 import kotlinx.android.synthetic.main.fragment_movies_list.*
 
 class MoviesListFragment : Fragment() {
@@ -24,8 +26,7 @@ class MoviesListFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_movies_list, container, false)
+        return inflater.inflate(com.cubos.cine.R.layout.fragment_movies_list, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -38,12 +39,12 @@ class MoviesListFragment : Fragment() {
 
     private fun initUi() {
         adapter = MovieRecyclerAdapter { movie, view ->
-//            val options = ActivityOptions
-//                .makeSceneTransitionAnimation(this, view, DetailsActivity.TRANSITION_IMAGE)
-//
-//            startActivity(Intent(this, DetailsActivity::class.java).apply {
-//                putExtra(ATTR_IMAGE, cat.url)
-//            }, options.toBundle())
+            val options = ActivityOptions
+                .makeSceneTransitionAnimation(activity, view, MovieDetailActivity.TRANSITION_IMAGE)
+
+            startActivity(Intent(activity, MovieDetailActivity::class.java).apply {
+                //putExtra(VIEW_MODEL, MovieDetailViewModel(movie))
+            }, options.toBundle())
         }
         recyclerView?.layoutManager = GridLayoutManager(this.context, 3)
         recyclerView?.adapter = adapter
