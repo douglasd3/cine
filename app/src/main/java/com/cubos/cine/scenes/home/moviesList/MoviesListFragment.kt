@@ -13,6 +13,9 @@ import androidx.recyclerview.widget.GridLayoutManager
 
 import com.cubos.cine.scenes.home.moviesList.adapters.MovieRecyclerAdapter
 import com.cubos.cine.scenes.movieDetail.MovieDetailActivity
+import com.cubos.cine.scenes.movieDetail.MovieDetailActivity.Companion.MOVIE
+import com.cubos.cine.scenes.movieDetail.MovieDetailViewModel
+import com.google.gson.Gson
 import kotlinx.android.synthetic.main.fragment_movies_list.*
 
 class MoviesListFragment : Fragment() {
@@ -42,22 +45,26 @@ class MoviesListFragment : Fragment() {
             val options = ActivityOptions
                 .makeSceneTransitionAnimation(activity, view, MovieDetailActivity.TRANSITION_IMAGE)
 
+            val json = Gson().toJson(movie)
+
             startActivity(Intent(activity, MovieDetailActivity::class.java).apply {
-                //putExtra(VIEW_MODEL, MovieDetailViewModel(movie))
+                putExtra(MOVIE, json)
             }, options.toBundle())
         }
+
         recyclerView?.layoutManager = GridLayoutManager(this.context, 3)
         recyclerView?.adapter = adapter
     }
 
     private fun initObservables() {
-//        viewModel.isLoading.observe(this, Observer {
-//            if (it == true) {
-//                progressBar?.visibility = View.VISIBLE
-//            } else {
-//                progressBar?.visibility = View.GONE
-//            }
-//        })
+        viewModel.isLoading.observe(this, Observer {
+            if (it == true) {
+                moviesProgressBar?.visibility = View.VISIBLE
+            } else {
+                moviesProgressBar?.visibility = View.GONE
+            }
+        })
+
         viewModel.moviesList.observe(this, Observer { list ->
             adapter.submitList(list)
         })

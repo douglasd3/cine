@@ -7,6 +7,7 @@ class ApiService {
     companion object {
         const val posterBaseURL = "https://image.tmdb.org/t/p/"
         const val posterBaseSize = "w400"
+        const val posterOriginalSize = "original"
     }
 
     private val retrofit = Retrofit.Builder()

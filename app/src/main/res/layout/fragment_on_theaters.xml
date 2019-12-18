@@ -14,12 +14,10 @@
         android:paddingEnd="55dp"
         android:clipToPadding="false"/>
 
-<!--    <com.cubos.cine.views.HorizontalCarouselRecyclerView-->
-<!--        android:id="@+id/item_list"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_gravity="center_vertical"-->
-<!--        android:clipToPadding="false"-->
-<!--        android:overScrollMode="never" />-->
+    <ProgressBar
+        android:id="@+id/onTheatersProgressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"/>
 
 </FrameLayout>

@@ -2,9 +2,7 @@ package com.cubos.cine.dataSource
 
 import androidx.lifecycle.MutableLiveData
 import androidx.paging.DataSource
-import com.cubos.cine.dataSource.MovieDataSource
 import com.cubos.cine.models.Movie
-import com.cubos.cine.models.MovieResponse
 
 class MovieDataSourceFactory(private val type: MovieDataSourceType) : DataSource.Factory<Int, Movie>() {
 

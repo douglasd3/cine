@@ -1,18 +1,20 @@
 package com.cubos.cine.models
 
+import com.google.gson.annotations.SerializedName
+
 data class Movie (
-    val poster_path: String,
-    val adult: Boolean,
-    val overview: String,
-    val release_date: String,
-    val genre_ids: List<Int>,
-    val id: Int,
-    val original_title: String,
-    val original_language: String,
-    val title: String,
-    val backdrop_path: String,
-    val popularity: Float,
-    val vote_count: Int,
-    val video: Boolean,
-    val vote_average: Float
+    @SerializedName("poster_path") val poster_path: String,
+    @SerializedName("adult") val adult: Boolean,
+    @SerializedName("overview") val overview: String,
+    @SerializedName("release_date") val release_date: String,
+    @SerializedName("genre_ids") val genre_ids: List<Int>,
+    @SerializedName("id") val id: Int,
+    @SerializedName("original_title") val original_title: String,
+    @SerializedName("original_language") val original_language: String,
+    @SerializedName("title") val title: String,
+    @SerializedName("backdrop_path") val backdrop_path: String,
+    @SerializedName("popularity") val popularity: Float,
+    @SerializedName("vote_count") val vote_count: Int,
+    @SerializedName("video") val video: Boolean,
+    @SerializedName("vote_average") val vote_average: Float
 )

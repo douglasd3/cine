@@ -8,7 +8,6 @@ import androidx.paging.PagedList
 import com.cubos.cine.dataSource.MovieDataSourceFactory
 import com.cubos.cine.dataSource.MovieDataSourceType
 import com.cubos.cine.models.Movie
-import com.cubos.cine.models.MovieResponse
 
 class MoviesListViewModel: ViewModel() {
 
